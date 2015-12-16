@@ -2,6 +2,7 @@ package com.dtg.openglrendering;
 
 import android.content.Context;
 import android.opengl.GLSurfaceView;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
@@ -27,33 +28,6 @@ public class MyGLSurfaceView extends GLSurfaceView {
         this.requestFocus();
         //this.setFocusableInTouchMode(true);
     }
-
-    // Handler for key event
-    // @Override
-//    public boolean onKeyUp(int keyCode, KeyEvent evt) {
-//        switch(keyCode) {
-//            case KeyEvent.KEYCODE_DPAD_LEFT:   // Decrease Y-rotational speed
-//                renderer.speedY -= 0.1f;
-//                break;
-//            case KeyEvent.KEYCODE_DPAD_RIGHT:  // Increase Y-rotational speed
-//                renderer.speedY += 0.1f;
-//                break;
-//            case KeyEvent.KEYCODE_DPAD_UP:     // Decrease X-rotational speed
-//                renderer.speedX -= 0.1f;
-//                break;
-//            case KeyEvent.KEYCODE_DPAD_DOWN:   // Increase X-rotational speed
-//                renderer.speedX += 0.1f;
-//                break;
-//            case KeyEvent.KEYCODE_A:           // Zoom out (decrease z)
-//                renderer.z -= 0.2f;
-//                break;
-//            case KeyEvent.KEYCODE_Z:           // Zoom in (increase z)
-//                renderer.z += 0.2f;
-//                break;
-//        }
-//        return true;  // Event handled
-//    }
-
     // Handler for touch event
     private boolean pinch;
     @Override
@@ -74,7 +48,7 @@ public class MyGLSurfaceView extends GLSurfaceView {
                     deltaY = currentY - previousY;
                     renderer.angleX += deltaY * TOUCH_SCALE_FACTOR;
                     renderer.angleY += deltaX * TOUCH_SCALE_FACTOR;
-                    renderer.z -= 0.02f;
+//                    renderer.z -= 0.02f;
                 }
             case MotionEvent.ACTION_POINTER_DOWN:
                 pinch = true;
